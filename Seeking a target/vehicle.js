@@ -1,3 +1,4 @@
+let dirVec;
 class Vehicle {
     constructor(x, y) {
         this.pos = createVector(x, y);
@@ -14,7 +15,7 @@ class Vehicle {
         let force = p5.Vector.sub(target, this.pos);
         force.setMag(floor(speed_slider.value));
         force.sub(this.vel);
-        force.limit(floor(force_slider.value)/10);
+        force.limit(floor(force_slider.value) / 10);
         this.applyForce(force);
         console.log(speed_slider.value);
         console.log(force_slider.value);
@@ -34,13 +35,17 @@ class Vehicle {
     }
 
     show() {
-        stroke(255);
+        stroke(255, 0, 0);
         strokeWeight(2);
         fill(255);
         push();
         translate(this.pos.x, this.pos.y);
         rotate(this.vel.heading());
-        triangle(-this.r, -this.r / 2, -this.r, this.r / 2, this.r, 0);
+        strokeWeight(2);
+        image(cat, this.r - 50, -50, 100, 100);
+        line(0, 0, 10 * document.getElementById("speed").value, 0);
+        line(10 * document.getElementById("speed").value, 0, 10 * document.getElementById("speed").value - 6, -6);
+        line(10 * document.getElementById("speed").value, 0, 10 * document.getElementById("speed").value - 6, +6);
         pop();
     }
 

@@ -1,5 +1,8 @@
 let vehicle = [];
 let target;
+let cat;
+let ball;
+let bg;
 
 function setup() {
   let canvas = createCanvas(800, 800);
@@ -8,14 +11,17 @@ function setup() {
   {
     vehicle[i] = new Vehicle(100, i*50);
   }
+  cat = loadImage("cat.png");
+  ball = loadImage("ball.png");
+  bg = loadImage("floor.png");
 }
 
 function draw() {
-  background(0);
+  background(bg);
   fill(255, 0, 0);
   noStroke();
   target = createVector(mouseX, mouseY);
-  circle(target.x, target.y, 16);
+  image(ball, target.x-25, target.y - 25, 50, 50);
   for(let i=0;i<1;i++)
   {
     vehicle[i].seek(target);
