@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      justify-content: center;
+      height: 100vh;
+      background-color: #282c34;
+      color: white;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 30%;
+      height: 25px;
+      background: #d3d3d3;
+      outline: none;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+      position: absolute;
+      left: 960px;
+      top: 100px;
+    }
+
+    .slider2 {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 30%;
+      height: 25px;
+      background: #d3d3d3;
+      outline: none;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+      position: absolute;
+      left: 960px;
+      top: 140px;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: black;
+      cursor: pointer;
+    }
+
+    .slider2::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: black;
+      cursor: pointer;
+    }
+
+    b1 {
+      position: absolute;
+      left: 850px;
+      top: 108px;
+      color: rgb(255, 255, 255);
+    }
+
+    b2 {
+      position: absolute;
+      left: 850px;
+      top: 150px;
+      color: rgb(255, 255, 255);
+    }
+
+    b3 {
+      position: absolute;
+      left: 1540px;
+      top: 107px;
+      color: rgb(255, 255, 255);
+    }
+
+    b4 {
+      position: absolute;
+      left: 1540px;
+      top: 147px;
+      color: rgb(255, 255, 255);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 25px;
+      font: 800;
+    }
+
+    .rectangle {
+      position: absolute;
+      height: 75px;
+      width: 720px;
+      left: 840px;
+      top: 98px;
+      background-color: #4f4f4f;
+    }
+  </style>
+</head>
+
+<h1>
+  Autonomous steering agent seeking for target
+</h1>
+
+<body>
+  <div class="rectangle"></div>
+  <script src="vehicle.js"></script>
+  <script src="sketch.js"></script>
+  <b1>Turning speed: </b1>
+  <input class="slider" type="range" min="0.1" max="25" value="2" id="force">
+  <b3 id="force_val"> </b3>
+  <br>
+  <b2>Max speed: </b2>
+  <input class="slider2" type="range" min="0.1" max="25" value="2" class="slider" id="speed">
+  <b4 id="speed_val"> </b4>
+</body>
+
+</html>
